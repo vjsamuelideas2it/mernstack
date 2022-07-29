@@ -8,8 +8,8 @@ const bcrypt = require("bcryptjs");
 const config = require("config");
 
 // @route   GET api/auth
-// @desc    Test route
-// @access  Public
+// @desc    Get authenticated user if token is passed in header
+// @access  Private
 router.get("/", auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
