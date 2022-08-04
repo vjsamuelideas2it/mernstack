@@ -1,9 +1,10 @@
 import { Fragment, useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
 import { login } from "../../actions/auth";
 
 const Login = () => {
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -17,8 +18,12 @@ const Login = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch(login(email, password));
-    console.log("Success");
   };
+
+  // Redirect if logged in
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />;
+  }
 
   return (
     <Fragment>

@@ -3,6 +3,7 @@ import {
   AUTH_ERROR,
   LOGIN_FAIL,
   LOGIN_SUCCESS,
+  LOGOUT,
   REGISTER_FAIL,
   REGISTER_SUCCESS,
   USER_LOADED,
@@ -48,6 +49,7 @@ export const register =
         payload: res.data,
       });
       dispatch(setAlert("User registered successfully!", "success"));
+      dispatch(loadUser());
     } catch (error) {
       const errors = error.response.data.errors;
 
@@ -76,6 +78,8 @@ export const login = (email, password) => async (dispatch) => {
       type: LOGIN_SUCCESS,
       payload: res.data,
     });
+    console.log(res.data);
+    dispatch(loadUser());
   } catch (error) {
     const errors = error.response.data.errors;
     if (errors) {
@@ -85,4 +89,11 @@ export const login = (email, password) => async (dispatch) => {
       type: LOGIN_FAIL,
     });
   }
+};
+
+// Logout user / Clear profile
+export const logout = () => (dispatch) => {
+  dispatch({
+    type: LOGOUT,
+  });
 };
