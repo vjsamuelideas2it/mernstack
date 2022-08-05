@@ -69,6 +69,7 @@ const Register = () => {
           <input
             type="password"
             placeholder="Password"
+            autoComplete="true"
             name="password"
             value={password}
             onChange={(e) => onChange(e)}
@@ -80,6 +81,7 @@ const Register = () => {
             type="password"
             placeholder="Confirm Password"
             name="password2"
+            autoComplete="true"
             value={password2}
             onChange={(e) => onChange(e)}
             minLength="6"
