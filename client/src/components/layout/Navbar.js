@@ -27,11 +27,11 @@ const Navbar = () => {
   );
   const authLinks = (
     <ul>
-      <li>
-        <a href="#!" onClick={logoutHandler}>
+      <li className="clickable">
+        <p onClick={logoutHandler}>
           <i className="fas fa-sign-out-alt"></i>{" "}
           <span className="hide-sm">Logout</span>
-        </a>
+        </p>
       </li>
     </ul>
   );
