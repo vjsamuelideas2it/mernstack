@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { logout } from "../../actions/auth";
+import React, { Fragment } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { logout } from '../../actions/auth';
 
 const Navbar = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -15,31 +15,37 @@ const Navbar = () => {
   const guestLinks = (
     <ul>
       <li>
-        <Link to="/profiles">Developers</Link>
+        <Link to='/profiles'>Developers</Link>
       </li>
       <li>
-        <Link to="/register">Register</Link>
+        <Link to='/register'>Register</Link>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        <Link to='/login'>Login</Link>
       </li>
     </ul>
   );
   const authLinks = (
     <ul>
-      <li className="clickable">
+      <li>
+        <Link to='/dashboard'>
+          <i className='fas fa-user'></i>{' '}
+          <span className='hide-sm'>Dashboard</span>
+        </Link>
+      </li>
+      <li className='clickable'>
         <p onClick={logoutHandler}>
-          <i className="fas fa-sign-out-alt"></i>{" "}
-          <span className="hide-sm">Logout</span>
+          <i className='fas fa-sign-out-alt'></i>{' '}
+          <span className='hide-sm'>Logout</span>
         </p>
       </li>
     </ul>
   );
   return (
-    <nav className="navbar bg-dark">
+    <nav className='navbar'>
       <h1>
-        <Link to="/">
-          <i className="fas fa-code"></i> DevConnector
+        <Link to='/'>
+          <i className='fa fa-comment'></i> iConnect
         </Link>
       </h1>
       {!loading && (
