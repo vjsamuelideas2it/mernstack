@@ -42,7 +42,7 @@ const Navbar = () => {
     </ul>
   );
   return (
-    <nav className='navbar'>
+    <nav className='navbar dark'>
       <h1>
         <Link to='/'>
           <i className='fa fa-comment'></i> iConnect
