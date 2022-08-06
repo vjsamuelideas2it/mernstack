@@ -2,7 +2,7 @@
 :root {
   --primary-color: #4285f4;
   --dark-color: #343a40;
-  --light-color: #e1d9d1;
+  --light-color: #e0e0e0;
   --danger-color: #dc3545;
   --success-color: #34a853;
   --white-color: #ffff;
@@ -121,6 +121,9 @@ img {
 .my-1 {
   margin: 1rem 0;
 }
+.mt-1 {
+  margin-top: 1rem;
+}
 .my-2 {
   margin: 2rem 0;
 }
@@ -177,7 +180,7 @@ img {
 .badge-light,
 .alert-light {
   background: var(--light-color);
-  color: #fff;
+  font-weight: bold !important;
 }
 
 .btn-dark,
@@ -516,6 +519,22 @@ button {
 /* Custom Styles */
 .hidden {
   display: none;
+}
+
+.icon-red-clickable {
+  color: #8b0000;
+  cursor: pointer;
+}
+
+.img-icon {
+  cursor: pointer;
+  height: 20px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.img-icon:hover {
+  opacity: 1;
 }
 
 /* Mobile Styles */
