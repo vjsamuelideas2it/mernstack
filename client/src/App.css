@@ -2,9 +2,9 @@
 :root {
   --primary-color: #4285f4;
   --dark-color: #343a40;
-  --light-color: #34a853;
+  --light-color: #e1d9d1;
   --danger-color: #dc3545;
-  --success-color: #28a745;
+  --success-color: #34a853;
   --white-color: #ffff;
 }
 
@@ -60,6 +60,7 @@ img {
 
 .lead {
   font-size: 1.5rem;
+  font-weight: 1000;
   margin-bottom: 1rem;
 }
 
@@ -162,7 +163,13 @@ img {
 .badge-primary,
 .alert-primary {
   background: var(--primary-color);
+  font-weight: bold !important;
   color: #fff;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #2c569c;
 }
 
 .btn-light,
@@ -195,6 +202,12 @@ img {
 .alert-success {
   background: var(--success-color);
   color: #fff;
+  font-weight: bold !important;
+  transition: background 0.2s;
+}
+
+.btn-success:hover {
+  background: #257d3d;
 }
 
 .btn-white,
@@ -204,10 +217,6 @@ img {
   background: #fff;
   color: #333;
   border: #ccc solid 1px;
-}
-
-.btn:hover {
-  opacity: 0.8;
 }
 
 .bg-light,
@@ -306,7 +315,7 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 0.7rem 2rem;
-  position: static;
+  position: fixed;
   z-index: 1;
   width: 100%;
   top: 0;
@@ -346,12 +355,10 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
-  /* background: url('./img/showcase.jpg') no-repeat center center/cover; */
-  height: 100vh;
+  height: 80vh;
 }
 
 .landing-inner {
-  /* color: #fff; */
   height: 100%;
   width: 80%;
   margin: auto;
@@ -506,6 +513,11 @@ button {
   margin-bottom: 0.5rem;
 }
 
+/* Custom Styles */
+.hidden {
+  display: none;
+}
+
 /* Mobile Styles */
 @media (max-width: 700px) {
   .container {
@@ -523,10 +535,6 @@ button {
 
   .large {
     font-size: 2rem;
-  }
-
-  .lead {
-    font-size: 1rem;
   }
 
   /* Navbar */

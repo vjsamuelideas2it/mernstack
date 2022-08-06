@@ -12,19 +12,19 @@ const Landing = () => {
     <section className='landing'>
       <div className='dark-overlay'>
         <div className='landing-inner'>
-          <h1 className='x-large'>
+          <h1 className='large'>
             Connecting with your peers has never been this easy
           </h1>
           <img src={collab} alt='collab' className='landing-image' />
           <p className='lead'>
-            Create a developer profile/portfolio, share posts and get help from
-            other developers
+            Create your profile/portfolio, share posts and collaborate with
+            others in your organization
           </p>
           <div className='buttons'>
             <Link to='/register' className='btn btn-primary'>
               Sign Up
             </Link>
-            <Link to='/login' className='btn btn-light'>
+            <Link to='/login' className='btn btn-success'>
               Login
             </Link>
           </div>
