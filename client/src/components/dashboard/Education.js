@@ -1,8 +1,15 @@
 import { Fragment } from 'react';
 import Moment from 'react-moment';
+import { useDispatch } from 'react-redux';
+import { deleteEducation } from '../../actions/profile';
 import remove from '../../assets/images/remove.png';
 
 const Education = ({ education }) => {
+  const dispatch = useDispatch();
+  const handleDeleteEducation = (expId) => {
+    dispatch(deleteEducation(expId));
+  };
+
   const educations = education.map((edu) => (
     <tr key={edu._id}>
       <td>{edu.school}</td>
@@ -16,10 +23,16 @@ const Education = ({ education }) => {
         )}
       </td>
       <td>
-        <img className='img-icon' src={remove} alt='remove' />
+        <img
+          className='img-icon'
+          onClick={() => handleDeleteEducation(edu._id)}
+          src={remove}
+          alt='remove'
+        />
       </td>
     </tr>
   ));
+
   return (
     <Fragment>
       <h2 className='mt-1'>Education Credentials</h2>

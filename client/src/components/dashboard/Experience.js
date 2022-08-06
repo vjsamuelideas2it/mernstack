@@ -1,8 +1,15 @@
 import { Fragment } from 'react';
 import Moment from 'react-moment';
+import { useDispatch } from 'react-redux';
+import { deleteExperience } from '../../actions/profile';
 import remove from '../../assets/images/remove.png';
 
 const Experience = ({ experience }) => {
+  const dispatch = useDispatch();
+  const handleDeleteExperience = (expId) => {
+    dispatch(deleteExperience(expId));
+  };
+
   const experiences = experience.map((exp) => (
     <tr key={exp._id}>
       <td>{exp.company}</td>
@@ -16,10 +23,16 @@ const Experience = ({ experience }) => {
         )}
       </td>
       <td>
-        <img className='img-icon' src={remove} alt='remove' />
+        <img
+          className='img-icon'
+          src={remove}
+          onClick={() => handleDeleteExperience(exp._id)}
+          alt='remove'
+        />
       </td>
     </tr>
   ));
+
   return (
     <Fragment>
       <h2 className='mt-1'>Experience Credentials</h2>

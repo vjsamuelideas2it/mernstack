@@ -1,6 +1,10 @@
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { deleteAccount } from '../../actions/profile';
 
 const DashboardActions = () => {
+  const dispatch = useDispatch();
+
   return (
     <div className='dash-buttons'>
       <Link to='/edit-profile' className='btn btn-dark'>
@@ -12,6 +16,14 @@ const DashboardActions = () => {
       <Link to='/add-education' className='btn btn-dark'>
         <i className='fas fa-graduation-cap text-primary'></i> Add Education
       </Link>
+      <button
+        className='btn btn-danger'
+        onClick={() => {
+          dispatch(deleteAccount());
+        }}
+      >
+        <i className='fas fa-user-minus'></i> Delete My Account
+      </button>
     </div>
   );
 };
