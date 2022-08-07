@@ -1,23 +1,24 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const { check, validationResult } = require("express-validator");
-const User = require("../../models/User");
-const gravatar = require("gravatar");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const config = require("config");
+const { check, validationResult } = require('express-validator');
+const auth = require('../../middleware/auth');
+const User = require('../../models/User');
+const gravatar = require('gravatar');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const config = require('config');
 
 // @route   POST api/users
 // @desc    Register new user
 // @access  Public
 router.post(
-  "/",
+  '/',
   [
-    check("name", "Name is required").not().isEmpty(),
-    check("email", "Please include a valid email").isEmail(),
+    check('name', 'Name is required').not().isEmpty(),
+    check('email', 'Please include a valid email').isEmail(),
     check(
-      "password",
-      "Please enter a password with 6 or more characters"
+      'password',
+      'Please enter a password with 6 or more characters'
     ).isLength({ min: 6 }),
   ],
   async (req, res) => {
@@ -33,13 +34,13 @@ router.post(
       if (user) {
         return res
           .status(400)
-          .json({ errors: [{ msg: "User already exists" }] });
+          .json({ errors: [{ msg: 'User already exists' }] });
       }
 
       const avatar = gravatar.url(email, {
-        s: "200",
-        r: "pg",
-        d: "mm",
+        s: '200',
+        r: 'pg',
+        d: 'mm',
       });
 
       user = new User({
@@ -61,7 +62,7 @@ router.post(
       };
       jwt.sign(
         payload,
-        config.get("jwtSecret"),
+        config.get('jwtSecret'),
         { expiresIn: 360000 },
         (err, token) => {
           if (err) {
@@ -72,7 +73,48 @@ router.post(
       );
     } catch (err) {
       console.error(err.message);
-      res.status(500).send("Server error");
+      res.status(500).send('Server error');
+    }
+  }
+);
+
+// @route   POST api/users/edit
+// @desc    Register new user
+// @access  Public
+router.post(
+  '/edit',
+  [
+    auth,
+    [
+      check('name', 'Name is required').not().isEmpty(),
+      check('email', 'Email is required').not().isEmpty(),
+    ],
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { name, email } = req.body;
+    const modifiedUserData = {};
+    modifiedUserData.name = name;
+    modifiedUserData.email = email;
+
+    try {
+      let user = await User.findById(req.user.id);
+      if (user) {
+        user = await User.findOneAndUpdate(
+          { _id: req.user.id },
+          { $set: modifiedUserData },
+          { new: true }
+        );
+        console.log('HERE');
+        return res.json(user);
+      }
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server error');
     }
   }
 );

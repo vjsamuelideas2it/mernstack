@@ -54,7 +54,7 @@ const EditProfile = ({ history }) => {
       youtube: loading || !profile.social ? '' : profile.social.youtube,
       instagram: loading || !profile.social ? '' : profile.social.instagram,
     });
-  }, [loading]);
+  }, [loading, dispatch]);
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

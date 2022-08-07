@@ -15,7 +15,7 @@ const Navbar = () => {
   const guestLinks = (
     <ul>
       <li>
-        <Link to='/profiles'>Developers</Link>
+        <Link to='/profiles'>People</Link>
       </li>
       <li>
         <Link to='/register'>Register</Link>
@@ -28,15 +28,21 @@ const Navbar = () => {
   const authLinks = (
     <ul>
       <li>
+        <Link to='/profiles'>
+          <i className='fas fa-users'></i>
+          <span className='hide-sm'> People</span>
+        </Link>
+      </li>
+      <li>
         <Link to='/dashboard'>
-          <i className='fas fa-user'></i>{' '}
-          <span className='hide-sm'>Dashboard</span>
+          <i className='fas fa-address-card'></i>
+          <span className='hide-sm'> Dashboard</span>
         </Link>
       </li>
       <li className='clickable'>
         <p onClick={logoutHandler}>
           <i className='fas fa-sign-out-alt'></i>{' '}
-          <span className='hide-sm'>Logout</span>
+          <span className='hide-sm'> Logout</span>
         </p>
       </li>
     </ul>
