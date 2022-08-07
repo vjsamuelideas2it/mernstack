@@ -109,7 +109,6 @@ router.post(
           { $set: modifiedUserData },
           { new: true }
         );
-        console.log('HERE');
         return res.json(user);
       }
     } catch (err) {
