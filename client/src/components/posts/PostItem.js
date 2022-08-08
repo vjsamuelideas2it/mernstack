@@ -2,12 +2,16 @@ import { useEffect } from 'react';
 import Moment from 'react-moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { loadUser } from '../../actions/auth';
 import { addLike, removeLike } from '../../actions/post';
 
 const PostItem = ({
   post: { _id, text, name, avatar, user, likes, comments, date },
 }) => {
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadUser());
+  }, [dispatch]);
   const auth = useSelector((state) => state.auth);
 
   return (

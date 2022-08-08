@@ -1,6 +1,8 @@
 import {
   AUTH_ERROR,
   DELETE_ACCOUNT,
+  EDIT_USER,
+  EDIT_USER_FAIL,
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   LOGOUT,
@@ -20,6 +22,7 @@ const auth = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case USER_LOADED:
+    case EDIT_USER:
       return {
         ...state,
         isAuthenticated: true,
@@ -31,7 +34,8 @@ const auth = (state = initialState, action) => {
       localStorage.setItem('token', payload.token);
       return { ...state, ...payload, isAuthenticated: true, loading: false };
     case REGISTER_FAIL:
-    case AUTH_ERROR:
+    // case AUTH_ERROR:
+    case EDIT_USER_FAIL:
     case LOGIN_FAIL:
     case LOGOUT:
     case DELETE_ACCOUNT:
