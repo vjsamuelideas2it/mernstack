@@ -39,20 +39,20 @@ const Navbar = () => {
           <span className='hide-sm'> Dashboard</span>
         </Link>
       </li>
-      <li className='clickable'>
+      <li>
         <div class='dropdown'>
           <button class='clickable dropbtn'>
             <i class='fa fa-cog'></i>
             <span className='hide-sm'> Settings</span>
           </button>
           <div class='dropdown-content'>
-            <a className='dropdown-option' href='#'>
+            <Link className='dropdown-option' to='#'>
               Account Settings
-            </a>
-            <a className='dropdown-option' href='#'>
+            </Link>
+            <Link className='dropdown-option' to='#'>
               Security Settings
-            </a>
-            <a href='#'>Customization</a>
+            </Link>
+            <Link to='#'>Customization</Link>
           </div>
         </div>
       </li>

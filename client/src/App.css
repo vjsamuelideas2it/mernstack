@@ -335,6 +335,7 @@ button {
   font-weight: 1000;
   padding: 0.45rem;
   margin: 0 0.25rem;
+  transition: color 0.2s;
 }
 
 .navbar a:hover {
@@ -347,6 +348,7 @@ button {
   margin: 0 0.25rem;
   padding: 0 0.45rem 0 0;
   color: var(--primary-color);
+  transition: color 0.2s;
 }
 
 .clickable:hover {
