@@ -40,8 +40,21 @@ const Navbar = () => {
         </Link>
       </li>
       <li className='clickable'>
+        <div class='dropdown'>
+          <button class='clickable dropbtn'>
+            <i class='fa fa-cog'></i>
+            <span className='hide-sm'> Settings</span>
+          </button>
+          <div class='dropdown-content'>
+            <a href='#'>Account Settings</a>
+            <a href='#'>Security Settings</a>
+            <a href='#'>Customization</a>
+          </div>
+        </div>
+      </li>
+      <li className='clickable'>
         <p onClick={logoutHandler}>
-          <i className='fas fa-sign-out-alt'></i>{' '}
+          <i className='fas fa-sign-out-alt'></i>
           <span className='hide-sm'> Logout</span>
         </p>
       </li>
