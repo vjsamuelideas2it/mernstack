@@ -15,26 +15,32 @@ const Navbar = () => {
   const guestLinks = (
     <ul>
       <li>
-        <Link to='/profiles'>People</Link>
+        <Link className='nav-link' to='/profiles'>
+          People
+        </Link>
       </li>
       <li>
-        <Link to='/register'>Register</Link>
+        <Link className='nav-link' to='/register'>
+          Register
+        </Link>
       </li>
       <li>
-        <Link to='/login'>Login</Link>
+        <Link className='nav-link' to='/login'>
+          Login
+        </Link>
       </li>
     </ul>
   );
   const authLinks = (
     <ul>
       <li>
-        <Link to='/profiles'>
+        <Link className='nav-link' to='/profiles'>
           <i className='fas fa-users'></i>
           <span className='hide-sm'> People</span>
         </Link>
       </li>
       <li>
-        <Link to='/dashboard'>
+        <Link className='nav-link' to='/dashboard'>
           <i className='fas fa-address-card'></i>
           <span className='hide-sm'> Dashboard</span>
         </Link>
