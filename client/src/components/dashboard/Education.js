@@ -33,6 +33,15 @@ const Education = ({ education }) => {
     </tr>
   ));
 
+  if (education.length === 0) {
+    return (
+      <p className='dashboard-card bg-light'>
+        <i className='fas fa-exclamation-circle'></i>
+        <span> You have not added your education credentials yet</span>
+      </p>
+    );
+  }
+
   return (
     <Fragment>
       <h2 className='mt-1'>Education Credentials</h2>

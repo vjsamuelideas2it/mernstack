@@ -33,6 +33,15 @@ const Experience = ({ experience }) => {
     </tr>
   ));
 
+  if (experience.length === 0) {
+    return (
+      <p className='dashboard-card bg-light'>
+        <i className='fas fa-exclamation-circle'></i>
+        <span> You have not added your experiences yet</span>
+      </p>
+    );
+  }
+
   return (
     <Fragment>
       <h2 className='mt-1'>Experience Credentials</h2>

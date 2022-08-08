@@ -12,7 +12,7 @@ const DashboardActions = () => {
         <i className='fas fa-user text-primary'></i> View Profile
       </Link>
       <Link to='/edit-profile' className='btn btn-dark'>
-        <i className='fas fa-user-circle text-primary'></i> Edit Profile
+        <i className='fas fa-edit text-primary'></i> Edit Profile
       </Link>
       <Link to='/add-experience' className='btn btn-dark'>
         <i className='fab fa-black-tie text-primary'></i> Add Experience

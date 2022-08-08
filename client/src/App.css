@@ -6,6 +6,7 @@
   --danger-color: #dc3545;
   --success-color: #34a853;
   --white-color: #ffff;
+  --warning-color: #f5ca7b;
 }
 
 * {
@@ -473,8 +474,20 @@ button {
   opacity: 0.6;
 }
 
+.dashboard-card {
+  background: var(--warning-color);
+  padding: 10px;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+}
+
+.dashboard-card:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
 .profile-top img {
-  width: 250px;
+  width: 150px;
 }
 
 .profile-top .icons a {
