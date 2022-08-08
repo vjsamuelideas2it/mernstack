@@ -353,7 +353,7 @@ button {
 .clickable {
   cursor: pointer;
   font-weight: 1000;
-  margin: 0 0.25rem;
+  margin: 0 0.25rem !important;
   padding: 0 0.45rem 0 0;
   color: var(--primary-color);
   transition: color 0.2s;
