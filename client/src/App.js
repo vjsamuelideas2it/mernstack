@@ -7,6 +7,7 @@ import Landing from './components/layout/Landing';
 import Navbar from './components/layout/Navbar';
 // Redux
 import { Provider } from 'react-redux';
+import history from './history';
 import store from './store';
 import Alert from './components/layout/Alert';
 import setAuthToken from './utils/setAuthToken';
@@ -31,7 +32,7 @@ const App = () => {
   }, []);
   return (
     <Provider store={store}>
-      <Router>
+      <Router history={history}>
         <Fragment>
           <Navbar />
           <section className='container'>

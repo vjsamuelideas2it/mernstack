@@ -11,6 +11,7 @@ import {
 } from './types';
 import { setAlert } from './alert';
 import setAuthToken from '../utils/setAuthToken';
+import history from '../history';
 
 // Load User
 export const loadUser = () => async (dispatch) => {
@@ -99,4 +100,5 @@ export const logout = () => (dispatch) => {
   dispatch({
     type: LOGOUT,
   });
+  history.push('/');
 };

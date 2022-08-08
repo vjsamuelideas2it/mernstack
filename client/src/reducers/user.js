@@ -1,4 +1,4 @@
-import { EDIT_USER, EDIT_USER_FAIL } from '../actions/types';
+import { EDIT_USER, EDIT_USER_FAIL, LOGOUT } from '../actions/types';
 
 const initialState = {
   user: null,
@@ -19,6 +19,11 @@ const user = (state = initialState, action) => {
       return {
         ...state,
         error: payload,
+        loading: false,
+      };
+    case LOGOUT:
+      return {
+        ...state,
         loading: false,
       };
     default:

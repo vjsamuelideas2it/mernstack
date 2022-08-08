@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logout } from '../../actions/auth';
 
-const Navbar = () => {
+const Navbar = ({ history }) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const loading = useSelector((state) => state.auth.loading);
   const dispatch = useDispatch();
 
   const logoutHandler = () => {
-    dispatch(logout());
+    dispatch(logout(history));
   };
 
   const guestLinks = (
