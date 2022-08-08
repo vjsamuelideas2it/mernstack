@@ -594,6 +594,10 @@ button {
   margin-bottom: 0.5rem;
 }
 
+.liked-post-thumb {
+  color: var(--primary-color);
+}
+
 /* Custom Styles */
 .hidden {
   display: none;
