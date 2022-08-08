@@ -46,8 +46,12 @@ const Navbar = () => {
             <span className='hide-sm'> Settings</span>
           </button>
           <div class='dropdown-content'>
-            <a href='#'>Account Settings</a>
-            <a href='#'>Security Settings</a>
+            <a className='dropdown-option' href='#'>
+              Account Settings
+            </a>
+            <a className='dropdown-option' href='#'>
+              Security Settings
+            </a>
             <a href='#'>Customization</a>
           </div>
         </div>
