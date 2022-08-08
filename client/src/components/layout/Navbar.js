@@ -46,13 +46,13 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <div class='dropdown'>
-          <button class='clickable dropbtn'>
-            <i class='fa fa-cog'></i>
+        <div className='dropdown'>
+          <button className='clickable dropbtn'>
+            <i className='fa fa-cog'></i>
             <span className='hide-sm'> Settings</span>
           </button>
-          <div class='dropdown-content'>
-            <Link className='dropdown-option' to='#'>
+          <div className='dropdown-content'>
+            <Link className='dropdown-option' to='/account-settings'>
               Account Settings
             </Link>
             <Link className='dropdown-option' to='#'>
