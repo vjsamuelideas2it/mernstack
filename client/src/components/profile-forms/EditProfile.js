@@ -38,7 +38,6 @@ const EditProfile = ({ history }) => {
   const dispatch = useDispatch();
   const { profile, loading } = useSelector((state) => state.profile);
   useEffect(() => {
-    console.log(profile);
     dispatch(getCurrentProfile());
     setFormData({
       company: loading || !profile.company ? '' : profile.company,

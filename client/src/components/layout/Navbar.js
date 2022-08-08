@@ -40,6 +40,12 @@ const Navbar = ({ history }) => {
         </Link>
       </li>
       <li>
+        <Link className='nav-link' to='/posts'>
+          <i className='fas fa-users'></i>
+          <span className='hide-sm'> Posts</span>
+        </Link>
+      </li>
+      <li>
         <Link className='nav-link' to='/dashboard'>
           <i className='fas fa-address-card'></i>
           <span className='hide-sm'> Dashboard</span>
