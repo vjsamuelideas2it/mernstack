@@ -6,6 +6,7 @@ import Spinner from '../layout/Spinner';
 import ProfileAbout from './ProfileAbout';
 import ProfileEducation from './ProfileEducation';
 import ProfileExperience from './ProfileExperience';
+import ProfileGithub from './ProfileGithub';
 import ProfileTop from './ProfileTop';
 // import Spinner from '../layout/Spinner';
 
@@ -63,6 +64,9 @@ const Profile = ({ match }) => {
                 <h4>No education credentials</h4>
               )}
             </div>
+            {profile.githubusername && (
+              <ProfileGithub username={profile.githubusername} />
+            )}
           </div>
         </Fragment>
       )}
