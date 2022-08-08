@@ -41,7 +41,7 @@ const Navbar = ({ history }) => {
       </li>
       <li>
         <Link className='nav-link' to='/posts'>
-          <i className='fas fa-users'></i>
+          <i className='fas fa-sticky-note'></i>
           <span className='hide-sm'> Posts</span>
         </Link>
       </li>
