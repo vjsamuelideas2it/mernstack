@@ -24,11 +24,13 @@ const Profile = ({ match }) => {
       ) : (
         <Fragment>
           <Link to='/profiles' className='btn btn-primary'>
-            Back to Profiles
+            <i className='fas fa-users'></i>
+            <span> All Profiles</span>
           </Link>
           {auth.isAuthenticated && auth.user._id === profile.user._id && (
             <Link to='/edit-profile' className='btn btn-dark'>
-              Edit Profile
+              <i className='fas fa-edit'></i>
+              <span> Edit Profile</span>
             </Link>
           )}
           <div className='profile-grid my-1'>

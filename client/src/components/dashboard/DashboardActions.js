@@ -1,12 +1,16 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deleteAccount } from '../../actions/profile';
 
 const DashboardActions = () => {
+  const userId = useSelector((state) => state.profile.profile.user._id);
   const dispatch = useDispatch();
 
   return (
     <div className='dash-buttons'>
+      <Link to={`/profile/${userId}`} className='btn btn-dark'>
+        <i className='fas fa-user text-primary'></i> View Profile
+      </Link>
       <Link to='/edit-profile' className='btn btn-dark'>
         <i className='fas fa-user-circle text-primary'></i> Edit Profile
       </Link>
