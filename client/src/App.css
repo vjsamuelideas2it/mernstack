@@ -66,7 +66,7 @@ img {
 
 .lead {
   font-size: 1.5rem;
-  font-weight: 1000;
+  font-weight: bold !important;
   margin-bottom: 1rem;
 }
 
@@ -503,6 +503,13 @@ button {
 }
 
 .profile-card:hover > div p {
+  color: white !important;
+}
+
+.profile-card:hover > div h4 {
+  color: white !important;
+}
+.profile-card:hover > ul li {
   color: white !important;
 }
 

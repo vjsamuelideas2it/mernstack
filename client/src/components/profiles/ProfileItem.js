@@ -19,7 +19,7 @@ const ProfileItem = ({
           className='round-img col-6 col-md-2 center-profile-image'
         />
         <div className='col-12 col-md-3 center-profile-item'>
-          <h4>{name}</h4>
+          <h4 className='lead'>{name}</h4>
         </div>
         <div className='col-12 col-md-4 center-profile-item'>
           <p>
