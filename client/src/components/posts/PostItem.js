@@ -26,17 +26,17 @@ const PostItem = ({
 
   return (
     <div className='post bg-white'>
+      <Link to={`/post/${_id}`} href='profile.html'>
+        <div className='d-flex'>
+          <img className='round-img col-6' src={avatar} alt='' />
+          <p className='col-6 post-author-alignment'>{name}</p>
+        </div>
+      </Link>
       <div>
-        <Link to={`/post/${_id}`} href='profile.html'>
-          <img className='round-img' src={avatar} alt='' />
-          <h4>{name}</h4>
-        </Link>
-      </div>
-      <div>
-        <p className='my-1'>{text}</p>
         <p className='post-date'>
           Posted on <Moment format='DD/MM/YYYY'>{date}</Moment>
         </p>
+        <p className='my-1'>{text}</p>
         <button
           onClick={(e) => {
             isPostLiked ? dispatch(removeLike(_id)) : dispatch(addLike(_id));

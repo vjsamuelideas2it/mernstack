@@ -15,9 +15,9 @@ const Posts = () => {
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className='text-primary'>Posts</h1>
+      <h1 className='large text-primary'>Posts</h1>
       <p className='lead'>
-        <i className='fas fa-user'></i> Welcome to the Community
+        <i className='fas fa-pen'></i> Share your thoughts or start a discussion
       </p>
       {/* POST FORM */}
       <div className='posts'>
