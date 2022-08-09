@@ -18,10 +18,10 @@ const ProfileItem = ({
           alt='avatar'
           className='round-img col-6 col-md-2 center-profile-image'
         />
-        <div className='col-12 col-md-4 center-profile-item'>
-          <h3>{name}</h3>
-        </div>
         <div className='col-12 col-md-3 center-profile-item'>
+          <h4>{name}</h4>
+        </div>
+        <div className='col-12 col-md-4 center-profile-item'>
           <p>
             {status} {company && <span> at {company}</span>}
           </p>

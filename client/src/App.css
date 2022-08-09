@@ -483,18 +483,27 @@ button {
   text-align: center;
 }
 
+.profile-card h4 {
+  color: var(--primary-color);
+}
+
 .profile-card p {
   color: #333 !important;
   transition: opacity 0.8s !important;
 }
 
 .profile-card {
+  padding: 10px;
   color: #333 !important;
-  transition: opacity 0.2s;
+  transition: background 0.2s;
 }
 
 .profile-card:hover {
-  opacity: 0.6;
+  background-color: var(--dark-color) !important;
+}
+
+.profile-card:hover > div p {
+  color: white !important;
 }
 
 .dashboard-card {
