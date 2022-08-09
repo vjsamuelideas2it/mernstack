@@ -177,10 +177,6 @@ img {
   transition: background 0.2s;
 }
 
-.btn-primary:hover {
-  background: #2c569c;
-}
-
 .btn-light,
 .bg-light,
 .badge-light,
@@ -214,10 +210,6 @@ img {
   color: #fff;
   font-weight: bold !important;
   transition: background 0.2s;
-}
-
-.btn-success:hover {
-  background: #257d3d;
 }
 
 .btn-white,
