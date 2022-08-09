@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Quicksand', sans-serif !important;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -25,7 +25,7 @@ body {
 
 a {
   color: var(--primary-color);
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 ul {
@@ -310,52 +310,62 @@ button {
 
 .table th,
 .table td {
-  padding: 1rem;
-  text-align: left;
+  padding: 1rem !important;
+  text-align: left !important;
 }
 
 .table th {
-  background: var(--light-color);
+  background: var(--light-color) !important;
 }
 
 /* Navbar */
 .navbar {
-  display: flex;
-  background-color: var(--dark-color);
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.7rem 2rem;
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  top: 0;
-  border-bottom: solid 1px var(--dark-color);
+  display: flex !important;
+  background-color: var(--dark-color) !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0.7rem 2rem !important;
+  position: fixed !important;
+  z-index: 1 !important;
+  height: 70px !important;
+  width: 100% !important;
+  top: 0 !important;
+  border-bottom: solid 1px var(--dark-color) !important;
 }
 
-.navbar ul {
-  display: flex;
+.navbar .logo {
+  margin-bottom: 1.75rem !important;
 }
 
 .navbar a {
-  color: var(--primary-color);
-  font-weight: 1000;
-  padding: 0.45rem;
-  margin: 0 0.25rem;
+  text-decoration: none !important;
+}
+
+.navbar ul {
+  display: flex !important;
+}
+
+.navbar a {
+  color: var(--primary-color) !important;
+  font-weight: 1000 !important;
 }
 
 .nav-link {
-  transition: color 0.2s;
+  transition: color 0.2s !important;
+}
+
+.navbar li {
+  padding: 0.45rem !important;
+  margin: 0 0.25rem !important;
 }
 
 .navbar a:hover {
-  color: var(--white-color);
+  color: var(--white-color) !important;
 }
 
 .clickable {
   cursor: pointer;
   font-weight: 1000;
-  margin: 0 0.25rem !important;
-  padding: 0 0.45rem 0 0;
   color: var(--primary-color);
   transition: color 0.2s;
 }
@@ -377,7 +387,7 @@ button {
   float: none;
   color: var(--primary-color);
   margin: 5px 5px;
-  text-decoration: none;
+  text-decoration: none !important;
   display: block;
   text-align: left;
 }
@@ -561,37 +571,39 @@ button {
 
 /* Posts Page */
 .post-form .post-form-header {
-  background: var(--primary-color);
-  padding: 0.5rem;
+  background: var(--primary-color) !important;
+  padding: 0.5rem !important;
 }
 
 .post {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-gap: 2rem;
-  align-items: center;
+  display: grid !important;
+  grid-template-columns: 1fr 4fr !important;
+  grid-gap: 2rem !important;
+  padding: 10px !important;
+  margin-bottom: 10px;
+  align-items: center !important;
 }
 
 .post > div:first-child {
-  text-align: center;
+  text-align: center !important;
 }
 
 .post img {
-  width: 100px;
+  width: 100px !important;
 }
 
 .post .comment-count {
-  background: var(--light-color);
-  color: var(--primary-color);
-  padding: 0.1rem 0.2rem;
-  border-radius: 5px;
-  font-size: 0.8rem;
+  background: var(--light-color) !important;
+  color: var(--primary-color) !important;
+  padding: 0.1rem 0.2rem !important;
+  border-radius: 5px !important;
+  font-size: 0.8rem !important;
 }
 
 .post .post-date {
-  color: #aaa;
-  font-size: 0.8rem;
-  margin-bottom: 0.5rem;
+  color: #aaa !important;
+  font-size: 0.8rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .liked-post-thumb {
@@ -610,7 +622,7 @@ button {
 
 .img-icon {
   cursor: pointer;
-  height: 20px;
+  width: 20px;
   opacity: 0.6;
   transition: opacity 0.2s;
 }
@@ -640,25 +652,30 @@ button {
 
   /* Navbar */
   .navbar {
-    display: block;
-    text-align: center;
+    display: block !important;
+    height: 100px !important;
+    text-align: center !important;
+  }
+
+  .navbar .logo {
+    margin-bottom: 1rem !important;
   }
 
   .navbar ul {
-    text-align: center;
-    justify-content: center;
+    text-align: center !important;
+    justify-content: center !important;
   }
 
   .navbar h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem !important;
   }
 
   .navbar .welcome {
-    display: none;
+    display: none !important;
   }
 
   .profile ul {
-    display: none;
+    display: none !important;
   }
 
   /* Profile Page */
@@ -689,10 +706,10 @@ button {
   }
 
   .post {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
   .post a,
   .post button {
-    padding: 0.3rem 0.4rem;
+    padding: 0.3rem 0.4rem !important;
   }
 }

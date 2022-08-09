@@ -78,11 +78,12 @@ const Navbar = ({ history }) => {
   );
   return (
     <nav className='navbar dark'>
-      <h1>
+      <h2 className='logo'>
         <Link to='/'>
-          <i className='fa fa-comment'></i> iConnect
+          <i className='fa fa-comment'></i>
+          {/* iConnect */}
         </Link>
-      </h1>
+      </h2>
       {!loading && (
         <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
       )}
