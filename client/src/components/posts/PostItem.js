@@ -26,12 +26,12 @@ const PostItem = ({
 
   return (
     <div className='post bg-white'>
-      <Link to={`/profile/${user}`} href='profile.html'>
-        <div className='d-flex'>
-          <img className='round-img col-6' src={avatar} alt='' />
-          <p className='col-6 post-author'>{name}</p>
-        </div>
-      </Link>
+      <div className='d-flex'>
+        <img className='round-img' src={avatar} alt='' />
+        <Link to={`/profile/${user}`} className='post-author'>
+          {name}
+        </Link>
+      </div>{' '}
       <div>
         <p className='post-date'>
           Posted on <Moment format='DD/MM/YYYY'>{date}</Moment>
