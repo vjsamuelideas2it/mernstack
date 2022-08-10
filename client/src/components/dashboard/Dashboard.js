@@ -26,10 +26,10 @@ const Dashboard = () => {
           <DashboardActions />
           <div className='container'>
             <div className='row'>
-              <div className='col-6'>
+              <div className='col-12 col-lg-6'>
                 <Experience experience={profile.experience} />
               </div>
-              <div className='col-6'>
+              <div className='col-12 col-lg-6'>
                 <Education education={profile.education} />
               </div>
             </div>
