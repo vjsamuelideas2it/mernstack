@@ -65,7 +65,7 @@ export const deletePost = (postId) => async (dispatch) => {
     const res = await axios.delete(`/api/posts/${postId}`);
     dispatch({
       type: DELETE_POST,
-      payload: { postId },
+      payload: postId,
     });
     dispatch(setAlert('Post removed', 'success'));
   } catch (error) {

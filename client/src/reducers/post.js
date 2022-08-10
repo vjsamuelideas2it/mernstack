@@ -37,7 +37,7 @@ const post = (state = initialState, action) => {
       );
       return {
         ...state,
-        posts: state.posts.filter((post) => post._id !== payload.postId),
+        posts: state.posts.filter((post) => post._id !== payload),
         loading: false,
       };
     case POST_ERROR:
