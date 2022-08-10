@@ -1,4 +1,5 @@
 import {
+  AUTH_ERROR,
   DELETE_ACCOUNT,
   EDIT_USER,
   EDIT_USER_FAIL,
@@ -43,6 +44,11 @@ const auth = (state = initialState, action) => {
         user: null,
         token: null,
         isAuthenticated: false,
+        loading: false,
+      };
+    case AUTH_ERROR:
+      return {
+        ...state,
         loading: false,
       };
     default:
