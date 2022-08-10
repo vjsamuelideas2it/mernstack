@@ -7,7 +7,7 @@ const DashboardActions = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className='dash-buttons'>
+    <div className='dash-buttons-group'>
       <Link to={`/profile/${userId}`} className='btn btn-dark'>
         <i className='fas fa-user text-primary'></i> View Profile
       </Link>

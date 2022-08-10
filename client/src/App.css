@@ -663,6 +663,11 @@ button {
   transition: opacity 0.2s;
 }
 
+.dash-buttons-group {
+  display: flex;
+  justify-content: center;
+}
+
 .img-icon:hover {
   opacity: 1;
 }
@@ -741,7 +746,11 @@ button {
     flex-direction: column;
   }
 
-  .dash-buttons a {
+  .dash-buttons-group {
+    display: grid;
+  }
+
+  .dash-buttons-group a {
     display: block;
     width: 100%;
     margin-bottom: 0.2rem;
