@@ -1,10 +1,12 @@
 /* Global Styles */
 :root {
   --primary-color: #4285f4;
+  --primary-color-hover: #3367bd;
   --dark-color: #333;
   --light-color: #e0e0e0;
   --danger-color: #dc3545;
   --success-color: #34a853;
+  --success-color-hover: #277d3e;
   --white-color: #ffff;
   --warning-color: #f5ca7b;
 }
@@ -169,27 +171,31 @@ img {
 
 .btn-primary,
 .bg-primary,
-.badge-primary,
-.alert-primary {
+.badge-primary {
   background: var(--primary-color);
+  border-radius: 0% !important;
   font-weight: bold !important;
   color: #fff;
-  transition: background 0.2s;
+  transition: background 0.2s !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color-hover) !important;
 }
 
 .btn-light,
 .bg-light,
-.badge-light,
-.alert-light {
+.badge-light {
   background: var(--light-color);
+  border-radius: 0% !important;
   font-weight: bold !important;
 }
 
 .btn-dark,
 .bg-dark,
-.badge-dark,
-.alert-dark {
+.badge-dark {
   background: var(--dark-color);
+  border-radius: 0% !important;
   font-weight: bold !important;
   color: #fff;
 }
@@ -199,17 +205,22 @@ img {
 .badge-danger,
 .alert-danger {
   background: var(--danger-color);
+  border-radius: 0% !important;
   color: #fff;
 }
 
 .btn-success,
 .bg-success,
-.badge-success,
-.alert-success {
-  background: var(--success-color);
+.badge-success {
+  background: var(--success-color) !important;
+  border-radius: 0% !important;
   color: #fff;
   font-weight: bold !important;
-  transition: background 0.2s;
+  transition: background 0.2s !important;
+}
+
+.btn-success:hover {
+  background-color: var(--success-color-hover) !important;
 }
 
 .btn-white,

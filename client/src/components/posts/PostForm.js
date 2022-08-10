@@ -9,7 +9,7 @@ const PostForm = () => {
   return (
     <div className='post-form'>
       <form
-        className='form my-1'
+        className='form mb-4'
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(addPost({ text }));
@@ -23,9 +23,14 @@ const PostForm = () => {
           placeholder='Create a post'
           value={text}
           onChange={(e) => setText(e.target.value)}
+          className='mb-2'
           required
         ></textarea>
-        <input type='submit' className='btn btn-dark my-1' value='Submit' />
+        <input
+          type='submit'
+          className='btn btn-success btn-lg'
+          value='Submit'
+        />
       </form>
     </div>
   );
