@@ -29,7 +29,7 @@ const PostItem = ({
       <Link to={`/post/${_id}`} href='profile.html'>
         <div className='d-flex'>
           <img className='round-img col-6' src={avatar} alt='' />
-          <p className='col-6 post-author-alignment'>{name}</p>
+          <p className='col-6 post-author'>{name}</p>
         </div>
       </Link>
       <div>
