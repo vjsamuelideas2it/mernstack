@@ -6,10 +6,11 @@ import PostItem from './PostItem';
 
 const Posts = () => {
   const dispatch = useDispatch();
-  const { posts, loading } = useSelector((state) => state.post);
   useEffect(() => {
     dispatch(getPosts());
   }, [dispatch]);
+
+  const { posts, loading } = useSelector((state) => state.post);
 
   return loading ? (
     <Spinner />

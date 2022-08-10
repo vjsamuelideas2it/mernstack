@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Moment from 'react-moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addLike, removeLike } from '../../actions/post';
+import { addLike, deletePost, removeLike } from '../../actions/post';
 
 const PostItem = ({
   post: { _id, text, name, avatar, user, likes, comments, date },
@@ -26,7 +26,7 @@ const PostItem = ({
 
   return (
     <div className='post bg-white'>
-      <Link to={`/post/${_id}`} href='profile.html'>
+      <Link to={`/profile/${user}`} href='profile.html'>
         <div className='d-flex'>
           <img className='round-img col-6' src={avatar} alt='' />
           <p className='col-6 post-author'>{name}</p>
@@ -57,7 +57,11 @@ const PostItem = ({
           )}
         </a>
         {!auth.loading && user === auth.user._id && (
-          <button type='button' className='btn btn-danger'>
+          <button
+            onClick={() => dispatch(deletePost(_id))}
+            type='button'
+            className='btn btn-danger'
+          >
             <i className='fas fa-times'></i>
           </button>
         )}
