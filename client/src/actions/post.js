@@ -1,10 +1,13 @@
 import axios from 'axios';
 import { setAlert } from './alert';
 import {
+  ADD_COMMENT,
   ADD_POST,
   DELETE_POST,
+  GET_POST,
   GET_POSTS,
   POST_ERROR,
+  REMOVE_COMMENT,
   UPDATE_LIKES,
 } from './types';
 
@@ -65,6 +68,25 @@ export const removeLike = (postId) => async (dispatch) => {
   }
 };
 
+// Get post
+export const getPost = (postId) => async (dispatch) => {
+  try {
+    const res = await axios.get(`/api/posts/${postId}`);
+    dispatch({
+      type: GET_POST,
+      payload: res.data,
+    });
+  } catch (error) {
+    dispatch({
+      type: POST_ERROR,
+      payload: {
+        msg: error.response.data,
+        status: error.response.status,
+      },
+    });
+  }
+};
+
 // Add a post
 export const addPost = (formData) => async (dispatch) => {
   const config = {
@@ -100,6 +122,54 @@ export const deletePost = (postId) => async (dispatch) => {
       payload: postId,
     });
     dispatch(setAlert('Post removed', 'success'));
+  } catch (error) {
+    dispatch({
+      type: POST_ERROR,
+      payload: {
+        msg: error.response.data,
+        status: error.response.status,
+      },
+    });
+  }
+};
+
+// Add a comment
+export const addComment = (postId, formData) => async (dispatch) => {
+  const config = {
+    headers: {
+      'Content-type': 'application/json',
+    },
+  };
+
+  try {
+    const res = await axios.post(
+      `/api/posts/comment/${postId}`,
+      formData,
+      config
+    );
+    dispatch({
+      type: ADD_COMMENT,
+      payload: res.data,
+    });
+  } catch (error) {
+    dispatch({
+      type: POST_ERROR,
+      payload: {
+        msg: error.response.data,
+        status: error.response.status,
+      },
+    });
+  }
+};
+
+// Delete comment
+export const deleteComment = (postId, commentId) => async (dispatch) => {
+  try {
+    const res = await axios.delete(`/api/posts/${postId}/${commentId}`);
+    dispatch({
+      type: REMOVE_COMMENT,
+      payload: commentId,
+    });
   } catch (error) {
     dispatch({
       type: POST_ERROR,

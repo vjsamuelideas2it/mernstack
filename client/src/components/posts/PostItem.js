@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import Moment from 'react-moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -6,6 +6,7 @@ import { addLike, deletePost, removeLike } from '../../actions/post';
 
 const PostItem = ({
   post: { _id, text, name, avatar, user, likes, comments, date },
+  showActions = true,
 }) => {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
@@ -37,33 +38,41 @@ const PostItem = ({
           Posted on <Moment format='DD/MM/YYYY'>{date}</Moment>
         </p>
         <p className='my-1'>{text}</p>
-        <button
-          onClick={(e) => {
-            isPostLiked ? dispatch(removeLike(_id)) : dispatch(addLike(_id));
-            setPostLiked(!isPostLiked);
-          }}
-          type='button'
-          className='btn btn-light'
-        >
-          <i
-            className={`fas fa-thumbs-up ${isPostLiked && 'liked-post-thumb'}`}
-          ></i>
-          {likes.length > 0 && <span> {likes.length}</span>}
-        </button>
-        <a className='btn btn-primary'>
-          Discussion
-          {comments.length > 0 && (
-            <span className='comment-count'> {comments.length}</span>
-          )}
-        </a>
-        {!auth.loading && user === auth.user._id && (
-          <button
-            onClick={() => dispatch(deletePost(_id))}
-            type='button'
-            className='btn btn-danger'
-          >
-            <i className='fas fa-times'></i>
-          </button>
+        {showActions && (
+          <Fragment>
+            <button
+              onClick={(e) => {
+                isPostLiked
+                  ? dispatch(removeLike(_id))
+                  : dispatch(addLike(_id));
+                setPostLiked(!isPostLiked);
+              }}
+              type='button'
+              className='btn btn-light'
+            >
+              <i
+                className={`fas fa-thumbs-up ${
+                  isPostLiked && 'liked-post-thumb'
+                }`}
+              ></i>
+              {likes.length > 0 && <span> {likes.length}</span>}
+            </button>
+            <Link to={`/posts/${_id}`} className='btn btn-primary'>
+              Discussion{' '}
+              {comments.length > 0 && (
+                <span className='comment-count'> {comments.length}</span>
+              )}
+            </Link>
+            {!auth.loading && user === auth.user._id && (
+              <button
+                onClick={() => dispatch(deletePost(_id))}
+                type='button'
+                className='btn btn-danger'
+              >
+                <i className='fas fa-times'></i>
+              </button>
+            )}
+          </Fragment>
         )}
       </div>
     </div>
