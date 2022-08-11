@@ -377,6 +377,10 @@ button {
   transition: color 0.2s;
 }
 
+.clickable-eye {
+  cursor: pointer;
+}
+
 .clickable:hover {
   color: var(--white-color);
 }
@@ -444,6 +448,10 @@ button {
 .landing-image {
   width: 300px;
   margin: 10 10 10 10;
+}
+
+.empty-image {
+  width: 300px;
 }
 
 /* Profiles Page */
@@ -697,6 +705,27 @@ button {
   align-items: center;
   margin-top: 15%;
   text-align: center;
+}
+
+.empty-here {
+  align-items: center;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.pass-field {
+  margin-right: 1rem;
+}
+
+.d-custom-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-buttons {
+  display: flex;
+  align-items: center;
 }
 
 /* Mobile Styles */

@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { login } from '../../actions/auth';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const Login = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -9,11 +11,19 @@ const Login = () => {
     email: '',
     password: '',
   });
+  const [showPassword, setShowPassword] = useState(false);
+
   const dispatch = useDispatch();
+  const passRef = useRef();
   const { email, password } = formData;
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+    passRef.current.type = showPassword ? 'text' : 'password';
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -42,16 +52,35 @@ const Login = () => {
             />
           </div>
           <div className='form-group'>
-            <input
-              type='password'
-              className='auth-form'
-              placeholder='Password'
-              autoComplete='true'
-              name='password'
-              value={password}
-              onChange={(e) => onChange(e)}
-              minLength='6'
-            />
+            <div className='d-custom-flex'>
+              <input
+                type='password'
+                ref={passRef}
+                className='auth-form pass-field'
+                placeholder='Password'
+                autoComplete='true'
+                name='password'
+                value={password}
+                onChange={(e) => onChange(e)}
+                minLength='6'
+              />
+              {!showPassword && (
+                <FontAwesomeIcon
+                  className='clickable-eye'
+                  onClick={handleShowPassword}
+                  size='lg'
+                  icon={faEye}
+                />
+              )}
+              {showPassword && (
+                <FontAwesomeIcon
+                  className='clickable-eye'
+                  onClick={handleShowPassword}
+                  size='lg'
+                  icon={faEyeSlash}
+                />
+              )}
+            </div>
           </div>
           <input type='submit' className='btn btn-primary' value='Login' />
         </form>

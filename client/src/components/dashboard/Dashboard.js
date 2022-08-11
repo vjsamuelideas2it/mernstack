@@ -6,6 +6,7 @@ import Spinner from '../layout/Spinner';
 import DashboardActions from './DashboardActions';
 import Education from './Education';
 import Experience from './Experience';
+import empty from '../../assets/images/empty.gif';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -19,10 +20,10 @@ const Dashboard = () => {
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className='large text-primary'>Hey, {user && user.name}</h1>
-      <br></br>
       {profile !== null ? (
         <Fragment>
+          <h1 className='large text-primary'>Hey, {user && user.name}</h1>
+          <br></br>
           <DashboardActions />
           <div className='dashboard-container'>
             <div className='row'>
@@ -36,12 +37,18 @@ const Dashboard = () => {
           </div>
         </Fragment>
       ) : (
-        <Fragment>
-          <p>You have not yet setup a profile, please add some info</p>
-          <Link to='/create-profile' className='btn btn-primary my-1'>
-            Create Profile
+        <div className='empty-here'>
+          <h1 className='text-primary'>
+            <i className='fas fa-exclamation-triangle'></i>
+            <br></br>
+            <span>It's empty here</span>
+          </h1>
+          <img src={empty} alt='scooter' className='empty-image' />
+          <br />
+          <Link to='/create-profile' className='btn btn-dark my-1'>
+            Create a Profile
           </Link>
-        </Fragment>
+        </div>
       )}
     </Fragment>
   );

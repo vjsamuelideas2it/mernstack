@@ -23,6 +23,10 @@ const Posts = () => {
       </p>
       <PostForm />
       <div className='posts'>
+        <div className='post-buttons mb-2'>
+          <button className='btn btn-primary'>Show all posts</button>
+          <button className='btn btn-dark'>My posts</button>
+        </div>
         {posts.map((post) => (
           <PostItem key={post._id} post={post} />
         ))}
