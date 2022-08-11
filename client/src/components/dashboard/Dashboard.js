@@ -24,7 +24,7 @@ const Dashboard = () => {
       {profile !== null ? (
         <Fragment>
           <DashboardActions />
-          <div className='container'>
+          <div className='dashboard-container'>
             <div className='row'>
               <div className='col-12 col-lg-6'>
                 <Experience experience={profile.experience} />

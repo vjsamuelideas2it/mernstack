@@ -542,6 +542,10 @@ button {
   color: white !important;
 }
 
+.dashboard-container {
+  margin-top: 30px;
+}
+
 .dashboard-card {
   background: var(--warning-color);
   padding: 10px;
@@ -783,12 +787,19 @@ button {
   }
 
   .dash-buttons-group {
-    display: grid;
+    display: flex;
   }
 
   .dash-buttons-group a {
     display: block;
-    width: 100%;
+    width: 20%;
+    font-size: 7px;
+    margin-bottom: 0.2rem;
+  }
+  .dash-buttons-group button {
+    display: block;
+    width: 20%;
+    font-size: 7px;
     margin-bottom: 0.2rem;
   }
 
