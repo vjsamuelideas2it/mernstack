@@ -11,7 +11,7 @@ const CommentItem = ({
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
   return (
-    <div className='post bg-white p-1 my-1'>
+    <div className='post comment-item p-1 my-1'>
       <div className='row'>
         <div className='col-5 col-md-3 col-lg-2'>
           <div className='d-flex my-1'>

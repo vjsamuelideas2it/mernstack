@@ -23,7 +23,7 @@ const PostForm = () => {
           placeholder='Create a post'
           value={text}
           onChange={(e) => setText(e.target.value)}
-          className='mb-2'
+          className='mb-2 text-area-shadow'
           required
         ></textarea>
         <input

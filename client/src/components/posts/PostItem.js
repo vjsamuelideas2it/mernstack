@@ -26,7 +26,7 @@ const PostItem = ({
   }, [auth.loading, setPostLiked]);
 
   return (
-    <div className='post bg-white'>
+    <div className='post post-shadow bg-white'>
       <div className='d-flex'>
         <img className='round-img' src={avatar} alt='' />
         <Link to={`/profile/${user}`} className='post-author'>

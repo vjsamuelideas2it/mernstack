@@ -2,6 +2,7 @@ import { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getProfileById } from '../../actions/profile';
+import NotFound from '../layout/NotFound';
 import Spinner from '../layout/Spinner';
 import ProfileAbout from './ProfileAbout';
 import ProfileEducation from './ProfileEducation';
@@ -17,6 +18,11 @@ const Profile = ({ match }) => {
   useEffect(() => {
     dispatch(getProfileById(match.params.id));
   }, [match.params.id, dispatch]);
+  if (profile === null && !loading) {
+    return (
+      <NotFound isPage={false}>This user doesn't have a profile yet</NotFound>
+    );
+  }
   return (
     <Fragment>
       {profile === null || loading ? (
