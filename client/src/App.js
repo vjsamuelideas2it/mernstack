@@ -23,6 +23,7 @@ import Profile from './components/profile/Profile';
 import AccountSettings from './components/profile-forms/AccountSettings';
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
+import NotFound from './components/layout/NotFound';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -73,6 +74,7 @@ const App = () => {
               />
               <PrivateRoute exact path='/posts' component={Posts} />
               <PrivateRoute exact path='/posts/:id' component={Post} />
+              <Route component={NotFound} />
             </Switch>
           </section>
         </Fragment>

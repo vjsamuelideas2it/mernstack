@@ -13,7 +13,7 @@ const CommentItem = ({
   return (
     <div className='post bg-white p-1 my-1'>
       <div className='row'>
-        <div className='col-2'>
+        <div className='col-6 col-md-3 col-lg-2'>
           <div className='d-flex my-1'>
             <img className='round-img' src={avatar} alt='' />
             <Link to={`/profile/${user}`} className='post-author'>
@@ -21,7 +21,7 @@ const CommentItem = ({
             </Link>
           </div>
         </div>
-        <div className='col-8'>
+        <div className='col-6 col-md-9 col-lg-10'>
           <p className='my-1'>{text}</p>
           <p className='post-date'>
             Commented on <Moment format='DD/MM/YYYY'>{date}</Moment>

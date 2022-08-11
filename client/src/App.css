@@ -672,6 +672,12 @@ button {
   opacity: 1;
 }
 
+.page-not-found {
+  align-items: center;
+  margin-top: 15%;
+  text-align: center;
+}
+
 /* Mobile Styles */
 @media (max-width: 700px) {
   .container {
@@ -703,7 +709,7 @@ button {
   }
 
   .navbar ul {
-    text-align: center !important;
+    padding-left: 0px !important;
     justify-content: center !important;
   }
 
