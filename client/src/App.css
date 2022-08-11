@@ -733,6 +733,19 @@ button {
     margin: auto !important;
   }
 
+  .comment-img {
+    width: 40% !important;
+    height: 40% !important;
+  }
+
+  .comment-text {
+    font-size: 13px;
+  }
+
+  .post-author {
+    font-size: 13px;
+  }
+
   .profile-top img,
   .profile img {
     width: 200px;
