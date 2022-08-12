@@ -1,20 +1,21 @@
 import { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { getCurrentProfile } from '../../actions/profile';
 import Spinner from '../layout/Spinner';
 import DashboardActions from './DashboardActions';
 import Education from './Education';
+import EmptyHere from './EmptyHere';
 import Experience from './Experience';
-import empty from '../../assets/images/empty.gif';
+import WelcomeScreen from './WelcomeScreen';
 
-const Dashboard = () => {
+const Dashboard = ({ history }) => {
   const dispatch = useDispatch();
   const { profile, loading } = useSelector((state) => state.profile);
   const { user } = useSelector((state) => state.auth);
+  const userLoading = useSelector((state) => state.auth.loading);
   useEffect(() => {
     dispatch(getCurrentProfile());
-  }, [dispatch]);
+  }, [dispatch, userLoading]);
 
   return loading && profile === null ? (
     <Spinner />
@@ -37,18 +38,13 @@ const Dashboard = () => {
           </div>
         </Fragment>
       ) : (
-        <div className='empty-here'>
-          <h1 className='text-primary'>
-            <i className='fas fa-exclamation-triangle'></i>
-            <br></br>
-            <span>It's empty here</span>
-          </h1>
-          <img src={empty} alt='scooter' className='empty-image' />
-          <br />
-          <Link to='/create-profile' className='btn btn-dark my-1'>
-            Create a Profile
-          </Link>
-        </div>
+        <Fragment>
+          {user?.showWelcomeScreen === false ? (
+            <EmptyHere />
+          ) : (
+            <WelcomeScreen userName={user && user.name} history={history} />
+          )}
+        </Fragment>
       )}
     </Fragment>
   );

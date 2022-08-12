@@ -9,6 +9,7 @@ import {
   REGISTER_FAIL,
   REGISTER_SUCCESS,
   USER_LOADED,
+  WELCOME_USER,
 } from '../actions/types';
 
 const initialState = {
@@ -23,6 +24,7 @@ const auth = (state = initialState, action) => {
   switch (type) {
     case USER_LOADED:
     case EDIT_USER:
+    case WELCOME_USER:
       return {
         ...state,
         isAuthenticated: true,

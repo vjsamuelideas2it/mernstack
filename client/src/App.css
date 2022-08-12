@@ -713,6 +713,10 @@ button {
   text-align: center;
 }
 
+lottie-player {
+  margin: 0 auto;
+}
+
 .empty-here {
   align-items: center;
   margin-top: 5%;

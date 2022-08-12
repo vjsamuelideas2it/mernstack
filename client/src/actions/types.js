@@ -10,6 +10,7 @@ export const LOGOUT = 'LOGOUT';
 export const GET_PROFILE = 'GET_PROFILE';
 export const EDIT_USER = 'EDIT_USER';
 export const EDIT_USER_FAIL = 'EDIT_USER_FAIL';
+export const WELCOME_USER = 'WELCOME_USER';
 export const GET_PROFILES = 'GET_PROFILES';
 export const GET_REPOS = 'GET_REPOS';
 export const PROFILE_ERROR = 'PROFILE_ERROR';
