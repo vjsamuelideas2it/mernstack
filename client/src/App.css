@@ -322,7 +322,8 @@ button {
 }
 
 .table th {
-  background: var(--light-color) !important;
+  background: var(--dark-color) !important;
+  color: var(--light-color);
 }
 
 /* Navbar */
@@ -694,7 +695,12 @@ button {
 
 .dash-buttons-group {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+}
+
+.dashboard-button {
+  width: 60px;
+  padding-right: 0.5rem;
 }
 
 .img-icon:hover {
@@ -726,6 +732,34 @@ button {
 .post-buttons {
   display: flex;
   align-items: center;
+}
+
+.btn-border {
+  border: solid !important;
+  color: var(--primary-color) !important;
+  transition: box-shadow 0.2s !important;
+}
+
+.btn-border:hover,
+.btn-border-delete:hover {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.btn-border-delete {
+  border: solid !important;
+  color: var(--dark-color) !important;
+  transition: box-shadow 0.2s !important;
+}
+
+.btn-red {
+  background: var(--danger-color) !important;
+}
+
+/* Tablet Styles */
+@media (max-width: 992px) {
+  .hide-md {
+    display: none !important;
+  }
 }
 
 /* Mobile Styles */
@@ -821,10 +855,15 @@ button {
 
   .dash-buttons-group a {
     display: block;
-    width: 20%;
     font-size: 7px;
     margin-bottom: 0.2rem;
   }
+
+  .dashboard-button {
+    width: 35px;
+    padding: 0;
+  }
+
   .dash-buttons-group button {
     display: block;
     width: 20%;
