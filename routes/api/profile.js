@@ -19,10 +19,6 @@ router.get('/me', auth, async (req, res) => {
       ['name', 'avatar']
     );
 
-    if (!profile) {
-      return res.status(400).json('Profile not found for this user');
-    }
-
     res.json(profile);
   } catch (err) {
     console.error(err.message);

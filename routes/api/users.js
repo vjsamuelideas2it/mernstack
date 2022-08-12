@@ -79,7 +79,7 @@ router.post(
 );
 
 // @route   POST api/users/edit
-// @desc    Register new user
+// @desc    Edit user details
 // @access  Public
 router.post(
   '/edit',
@@ -117,5 +117,26 @@ router.post(
     }
   }
 );
+
+// @route   POST api/users/userNotNew
+// @desc    Edit user details
+// @access  Public
+router.post('/userNotNew', [auth], async (req, res) => {
+  const isUserNew = req.body;
+  try {
+    let user = await User.findById(req.user.id);
+    if (user) {
+      user = await User.findOneAndUpdate(
+        { _id: req.user.id },
+        { $set: isUserNew },
+        { new: true }
+      );
+      return res.json(user);
+    }
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
 
 module.exports = router;
